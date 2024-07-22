@@ -7,7 +7,7 @@ export const TestimonialsSection = () => {
         <section className="px-5 md:px-10 w-full">
             <div className="flex flex-col lg:flex-row items-center lg:gap-12">
                 <div className="w-full lg:w-2/3">
-                    <h4 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-center lg:text-left">
+                    <h4 className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-center lg:text-left">
                         O que estão dizendo sobre nós
                     </h4>
                 </div>

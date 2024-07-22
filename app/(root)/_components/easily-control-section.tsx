@@ -5,11 +5,11 @@ import { SiNetflix, SiNubank } from "react-icons/si"
 
 export const EasilyControlSection = () => {
     return (
-        <section id="solutions-section" className="lg:mt-60 my-28 px-5 md:px-10 w-full">
+        <section id="solutions-section" className="lg:mt-60 2xl:mt-72 my-28 px-5 md:px-10 w-full">
             <div className="flex flex-col lg:flex-row items-center gap-16">
                 <div className="relative md:mt-40 lg:mt-0 order-2 lg:order-1 w-full flex-1">
                     <div className="relative">
-                        <div className="p-4 md:absolute md:-top-40 lg:-top-40 right-0 md:right-4 lg:-right-8 xl:right-20 rounded-xl md:min-w-96 lg:min-w-64 bg-black-gradient">
+                        <div className="p-4 md:absolute md:-top-40 lg:-top-40 right-0 md:right-4 lg:-right-8 xl:right-20 2xl:right-36 rounded-xl md:min-w-96 lg:min-w-64 2xl:min-w-96 bg-black-gradient">
                             <div className="flex justify-center items-center gap-4">
                                 <div className="flex justify-center items-center w-16 h-16 rounded-full bg-black">
                                     <FaPaypal className="w-10 h-10 text-teal-600" />
@@ -125,7 +125,7 @@ export const EasilyControlSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="absolute left-2/4 -translate-x-2/4 lg:left-auto lg:translate-x-0 -bottom-12 md:-bottom-10 lg:-bottom-6 lg:right-10 py-3 px-4 flex items-center gap-2 w-[105%] lg:w-fit rounded-xl bg-white">
+                        <div className="absolute left-2/4 -translate-x-2/4 lg:left-auto lg:translate-x-0 -bottom-12 md:-bottom-10 lg:-bottom-6 lg:right-10 2xl:right-36 py-3 px-4 flex items-center gap-2 w-[105%] lg:w-fit rounded-xl bg-white">
                             <div className="flex justify-center items-center w-8 h-8 rounded-full bg-green-500">
                                 <FaCheck className="w-4 h-4" />
                             </div>
@@ -139,7 +139,7 @@ export const EasilyControlSection = () => {
                 </div>
                 <div className="order-1 lg:order-2 flex-1">
                     <div className="mb-8">
-                        <h4 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-center lg:text-left">
+                        <h4 className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-center lg:text-left">
                             Controle facilmente gastos e faturamentos.
                         </h4>
                         <p className="mt-4 text-center lg:text-start text-gray-400">

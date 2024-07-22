@@ -9,7 +9,7 @@ export const WhatWeDoSection = () => {
             <div className="flex flex-col lg:flex-row items-center gap-16">
                 <div className="flex-1">
                     <div>
-                        <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-center lg:text-left">
+                        <h2 className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-center lg:text-left">
                             Você faz o negócio, nós cuidamos do dinheiro.
                         </h2>
                         <p className="mt-4 mb-12 text-center lg:text-left text-gray-400">

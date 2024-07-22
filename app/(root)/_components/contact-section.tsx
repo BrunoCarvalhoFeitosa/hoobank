@@ -1,5 +1,5 @@
 "use client"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { ToastContainer, toast } from "react-toastify"
@@ -17,7 +17,7 @@ const schema = yup.object({
     user_completeName:
         yup
         .string()
-        .matches(/^[A-Za-z ]*$/, "Please enter a valid name.")
+        .matches(/^[A-Za-z ]*$/, "Por favor, insira um nome válido.")
         .min(10, "Insira um nome completo válido.")
         .max(70)
         .required("O campo nome completo é obrigatório."),
@@ -71,23 +71,26 @@ const schema = yup.object({
 })
 
 export const ContactSection = () => {
-    const formRef = useRef(null)
-    const serviceId = process.env.NEXT_APP_EMAILJS_SERVICE_ID!
-    const templateId = process.env.NEXT_APP_EMAILJS_TEMPLATE_ID!
-    const apiKey = process.env.NEXT_APP_EMAILJS_API_KEY!
+    const [addressState, setAddressState] = useState<string>("")
+    const [addressCity, setAddressCity] = useState<string>("")
+    const [addressNeighborhood, setAddressNeighborhood] = useState<string>("")
+    const [addressStreet, setAddressStreet] = useState<string>("")
+    const formRef = useRef<HTMLFormElement>(null)
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!
+    const apiKey = process.env.NEXT_PUBLIC_EMAILJS_API_KEY!
 
     const {
         register,
         handleSubmit,
         setValue,
-        getValues,
         reset,
         formState: { errors }
     } = useForm({
-        resolver: yupResolver(schema),
+        resolver: yupResolver(schema)
     })
 
-    const handlePostalCodeAutocomplete = async (ev: any) => {
+    const handlePostalCodeAutocomplete = async (ev: React.ChangeEvent<HTMLInputElement>) => {
         cepFormatMask(ev)
         const postalCode = ev.target.value.replace(/\D/g, "")
 
@@ -113,8 +116,8 @@ export const ContactSection = () => {
         try {
             if (formRef.current) {
                 await emailjs.sendForm(serviceId, templateId, formRef.current, apiKey)
-    
-                toast.success("Mensagem enviada com sucesso.", {
+
+                toast.success("Mensagem enviada com sucesso, entraremos em contato.", {
                     position: "bottom-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -124,9 +127,10 @@ export const ContactSection = () => {
                     progress: undefined,
                     theme: "light",
                 })
+
+                reset()
             }
         } catch (error) {
-            console.log("error", error)
             toast.error("Ocorreu um erro ao enviar sua mensagem, tente novamente.", {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -137,6 +141,8 @@ export const ContactSection = () => {
                 progress: undefined,
                 theme: "light",
             })
+
+            reset()
         }
     }
 
@@ -168,6 +174,7 @@ export const ContactSection = () => {
                                     type="text"
                                     className="pl-14 pr-2 w-full h-12 bg-white/10 rounded-md border-none outline-none"
                                     placeholder="Nome completo"
+                                    autoComplete="off"
                                 />
                             </div>
                             {errors.user_completeName && (
@@ -207,6 +214,7 @@ export const ContactSection = () => {
                                     type="text"
                                     className="pl-14 pr-2 w-full h-12 bg-white/10 rounded-md border-none outline-none"
                                     placeholder="Profissão"
+                                    autoComplete="off"
                                 />
                             </div>
                             {errors.user_office && (
@@ -247,6 +255,7 @@ export const ContactSection = () => {
                                     className="pl-14 pr-2 w-full h-12 bg-white/10 rounded-md border-none outline-none"
                                     placeholder="Código postal"
                                     onKeyUp={handlePostalCodeAutocomplete}
+                                    autoComplete="off"
                                 />
                             </div>
                             {errors.user_addressPostalCode && (
@@ -308,6 +317,7 @@ export const ContactSection = () => {
                                     type="text"
                                     className="pl-14 pr-2 w-full h-12 bg-white/10 rounded-md border-none outline-none text-gray-400 disabled:cursor-not-allowed"
                                     placeholder="Bairro"
+                                    autoComplete="off"
                                 />
                             </div>
                             {errors.user_addressNeighborhood && (
@@ -352,7 +362,7 @@ export const ContactSection = () => {
                     <div className="flex justify-end w-full">
                         <button
                             type="submit"
-                            className="w-full lg:w-2/4 h-14 rounded-md bg-blue-gradient text-base md:text-lg font-bold text-black hover:opacity-75 transition-opacity duration-300"
+                            className="w-full lg:w-2/4 h-16 rounded-md bg-blue-gradient text-base md:text-lg font-bold text-black hover:opacity-75 transition-opacity duration-300"
                         >
                             Enviar minha mensagem agora
                         </button>

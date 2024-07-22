@@ -1,10 +1,10 @@
-import { HeroSection } from "@/app/_components/root/hero-section"
-import { WhatWeDoSection } from "@/app/_components/root/what-we-do-section"
-import { EasilyControlSection } from "@/app/_components/root/easily-control-section"
-import { FindBetterCardSection } from "@/app/_components/root/find-better-card-section"
-import { TestimonialsSection } from "@/app/_components/root/testimonials-section"
-import { SponsorsSection } from "@/app/_components/root/sponsors-section"
-import { ContactSection } from "@/app/_components/root/contact-section"
+import { HeroSection } from "@/app/(root)/_components/hero-section"
+import { WhatWeDoSection } from "@/app/(root)/_components/what-we-do-section"
+import { EasilyControlSection } from "@/app/(root)/_components/easily-control-section"
+import { FindBetterCardSection } from "@/app/(root)/_components/find-better-card-section"
+import { TestimonialsSection } from "@/app/(root)/_components/testimonials-section"
+import { SponsorsSection } from "@/app/(root)/_components/sponsors-section"
+import { ContactSection } from "@/app/(root)/_components/contact-section"
 
 const HomePage = () => {
     return (

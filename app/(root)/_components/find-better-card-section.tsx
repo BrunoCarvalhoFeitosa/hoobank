@@ -10,7 +10,7 @@ export const FindBetterCardSection = () => {
             <div className="flex flex-col lg:flex-row items-center gap-16">
                 <div className="flex-1">
                     <div className="mb-8">
-                        <h4 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-center lg:text-left">
+                        <h4 className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-center lg:text-left">
                             Encontre ofertas de maneira fácil e ágil.
                         </h4>
                         <p className="mt-4 text-center lg:text-start text-gray-400">

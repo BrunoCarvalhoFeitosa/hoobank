@@ -8,7 +8,7 @@ export const HeroSection = () => {
         <section id="hero-section" className="mx-auto py-10">
             <div className="flex flex-col lg:flex-row justify-between items-center xl:items-start gap-10 w-full h-full">
                 <div className="px-5 md:px-10 xl:-translate-y-14 flex-1 w-full">
-                    <div className="w-fit xl:mt-20 mx-auto lg:mx-0 p-2 flex justify-center items-center gap-1 rounded-md bg-black-gradient">
+                    <div className="w-fit xl:mt-20 2xl:mt-44 mx-auto lg:mx-0 p-2 flex justify-center items-center gap-1 rounded-md bg-black-gradient">
                         <div>
                             <DiscountSvg width="40" height="40" />
                         </div>
@@ -17,7 +17,7 @@ export const HeroSection = () => {
                         </div>
                     </div>
                     <div className="mt-4">
-                        <h1 className="text-4xl md:text-6xl lg:text-5xl xl:text-[56px] xl:leading-[66px] 2xl:lg:text-[128px] 2xl:leading-[120px] font-semibold text-center lg:text-left">
+                        <h1 className="text-4xl md:text-6xl lg:text-5xl xl:text-[56px] xl:leading-[66px] 2xl:lg:text-[95px] 2xl:leading-[105px] font-semibold text-center lg:text-left">
                             O método de pagamento da próxima <strong className="font-semibold text-gradient">geração</strong>.
                         </h1>
                         <p className="mt-6 xl:w-2/3 text-center lg:text-left text-gray-400">
@@ -43,7 +43,7 @@ export const HeroSection = () => {
                     <div className="absolute z-[0] w-[30%] h-[50%] right-20 bottom-20 blue-gradient" />
                 </div>
             </div>
-            <div className="lg:-translate-y-14 xl:-translate-y-16 mt-16 xl:mt-0 px-5 md:px-10 w-full flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="mx-auto lg:-translate-y-14 xl:-translate-y-16 mt-16 xl:mt-0 2xl:mt-16 px-5 md:px-10 w-full 2xl:w-2/3 flex flex-col md:flex-row justify-between items-center gap-8">
                 <div className="flex justify-between items-center gap-3">
                     <div className="text-xl lg:text-3xl xl:text-4xl font-bold">
                         <CountUp
@@ -57,7 +57,6 @@ export const HeroSection = () => {
                     <div className="text-sm lg:text-lg uppercase text-gradient">
                         Usuários ativos
                     </div>
-                    <div className="hidden lg:block xl:ml-24 w-[1px] h-5 bg-gray-500" />
                 </div>
                 <div className="flex justify-between items-center gap-3">
                     <div className="text-xl lg:text-3xl xl:text-4xl font-bold">
@@ -72,7 +71,6 @@ export const HeroSection = () => {
                     <div className="text-sm lg:text-lg uppercase text-gradient">
                         Confiam em nós
                     </div>
-                    <div className="hidden lg:block xl:ml-24 w-[1px] h-5 bg-gray-500" />
                 </div>
                 <div className="flex items-center gap-3">
                     <div className="text-xl lg:text-3xl xl:text-4xl font-bold">
