@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: auto;
+  scrollbar-color:  #FFF;
+}
+
+::selection {
+  background: #14B8A6;
+}
+
+::-moz-selection {
+  background: #14B8A6;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #14B8A6;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #FFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  body {
+    @apply box-border font-sans text-base text-white bg-primary;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.text-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.bg-black-gradient {
+  background: linear-gradient(
+    144.39deg,
+    #FFF -278.56%,
+    #9F9F9F -78.47%,
+    #11101D 91.61%
+  );
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #DEF9FA -43.27%,
+    #BEF3F5 -21.24%,
+    #9DEDF0 12.19%,
+    #7DE7EB 29.82%,
+    #5CE1E6 51.94%,
+    #33BBCF 90.29%
+  );
+}
+
+.blue-gradient {
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+  filter: blur(123px);
+}
+
+.pink-gradient {
+  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  filter: blur(900px);
+}
+
+.white-gradient {
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(750px);
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+  width: 50px;
+  height: 50px;
+  margin: 17px;
+  padding: 15px;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
