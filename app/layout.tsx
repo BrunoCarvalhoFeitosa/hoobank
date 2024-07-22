@@ -13,7 +13,7 @@ const font = Poppins({
 
 export const metadata: Metadata = {
     title: "Hoobank",
-    description: "Hoobank, a bank and payment system solution for everyone.",
+    description: "Hoobank, uma solução bancária para pagamentos e para todos.",
     icons: {
         icon: "/favicon/favicon.svg",
         shortcut: "/favicon/favicon.svg"
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: Readonly<{
   children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
+        <html lang="pt-br">
             <body className={font.className}>
                 <Header />
                 {children}

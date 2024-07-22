@@ -1,5 +1,5 @@
 "use client"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { ToastContainer, toast } from "react-toastify"
@@ -71,10 +71,6 @@ const schema = yup.object({
 })
 
 export const ContactSection = () => {
-    const [addressState, setAddressState] = useState<string>("")
-    const [addressCity, setAddressCity] = useState<string>("")
-    const [addressNeighborhood, setAddressNeighborhood] = useState<string>("")
-    const [addressStreet, setAddressStreet] = useState<string>("")
     const formRef = useRef<HTMLFormElement>(null)
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!
@@ -90,7 +86,7 @@ export const ContactSection = () => {
         resolver: yupResolver(schema)
     })
 
-    const handlePostalCodeAutocomplete = async (ev: React.ChangeEvent<HTMLInputElement>) => {
+    const handlePostalCodeAutocomplete = async (ev: any) => {
         cepFormatMask(ev)
         const postalCode = ev.target.value.replace(/\D/g, "")
 
